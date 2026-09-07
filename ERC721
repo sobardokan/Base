@@ -30,3 +30,9 @@ interface ISubmission {
     // Function to get haikus shared with the caller
     function getMySharedHaikus() external view returns (Haiku[] memory);
 }
+
+// Contract for managing Haiku NFTs
+contract HaikuNFT is ERC721, ISubmission {
+    Haiku[] public haikus; // Array to store haikus
+    mapping(address => mapping(uint256 => bool)) public sharedHaikus; // Mapping to track shared haikus
+    uint256 public haikuCounter; // Counter for total haikus minted
