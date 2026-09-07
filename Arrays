@@ -18,3 +18,7 @@ contract ArraysExercise {
         for(uint i=0; i<numbers.length; i++) {
             results[i] = numbers[i];
         }
+
+        // Return the memory array
+        return results;
+    }
