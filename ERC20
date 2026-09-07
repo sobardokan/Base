@@ -110,3 +110,17 @@ contract WeightedVoting is ERC20 {
         view
         returns (SerializedIssue memory)
     {
+        Issue storage _issue = issues[_issueId];
+        return
+            SerializedIssue({
+                voters: _issue.voters.values(),
+                issueDesc: _issue.issueDesc,
+                quorum: _issue.quorum,
+                totalVotes: _issue.totalVotes,
+                votesFor: _issue.votesFor,
+                votesAgainst: _issue.votesAgainst,
+                votesAbstain: _issue.votesAbstain,
+                passed: _issue.passed,
+                closed: _issue.closed
+            });
+    }
