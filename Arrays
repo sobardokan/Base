@@ -36,3 +36,10 @@ contract ArraysExercise {
             numbers.push(_toAppend[i]);
         }
     }
+
+    // Function to save a timestamp along with the sender's address
+    function saveTimestamp(uint _unixTimestamp) public {
+        // Push the timestamp and sender's address to their respective arrays
+        timestamps.push(_unixTimestamp);
+        senders.push(msg.sender);
+    }
