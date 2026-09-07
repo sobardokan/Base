@@ -71,3 +71,7 @@ contract ArraysExercise {
                 index++;
             }
         }
+
+        // Return timestamps and senders after Y2K
+        return (timestampsAfterY2K, sendersAfterY2K);
+    }
