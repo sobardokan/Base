@@ -103,3 +103,9 @@ contract HaikuNFT is ERC721, ISubmission {
         override
         returns (Haiku[] memory)
     {
+        uint256 sharedHaikuCount;
+        for (uint256 i = 0; i < haikus.length; i++) {
+            if (sharedHaikus[msg.sender][i + 1]) {
+                sharedHaikuCount++;
+            }
+        }
