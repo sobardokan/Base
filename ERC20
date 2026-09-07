@@ -93,3 +93,7 @@ contract WeightedVoting is ERC20 {
         if (balanceOf(msg.sender) == 0) {
             revert NoTokensHeld();
         }
+        // Check if the specified quorum is higher than total supply
+        if (_quorum > totalSupply()) {
+            revert QuorumTooHigh();
+        }
