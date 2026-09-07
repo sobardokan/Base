@@ -43,3 +43,8 @@ contract ArraysExercise {
         timestamps.push(_unixTimestamp);
         senders.push(msg.sender);
     }
+
+    // Function to retrieve timestamps and senders after the year 2000
+    function afterY2K() public view returns (uint256[] memory, address[] memory) {
+        // Initialize counter for timestamps after Y2K
+        uint256 counter = 0;
