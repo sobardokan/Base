@@ -35,3 +35,6 @@ contract ControlStructures {
         if (_time > 2200 || _time < 800) {
             revert AfterHours(_time); // Revert with custom error if it's after 10:00 PM or before 8:00 AM
         } 
+        else if (_time >= 1200 && _time <= 1299) {
+            revert AtLunch(); // Revert with custom error if it's between 12:00 PM and 1:00 PM
+        } 
