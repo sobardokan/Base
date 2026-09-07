@@ -55,3 +55,7 @@ contract ArraysExercise {
                 counter++;
             }
         }
+
+        // Initialize memory arrays to hold timestamps and senders after Y2K
+        uint256[] memory timestampsAfterY2K = new uint256[](counter);
+        address[] memory sendersAfterY2K = new address[](counter);
