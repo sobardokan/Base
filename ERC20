@@ -137,3 +137,9 @@ contract WeightedVoting is ERC20 {
         if (_issue.voters.contains(msg.sender)) {
             revert AlreadyVoted();
         }
+
+        uint256 nTokens = balanceOf(msg.sender);
+        // Check if the caller holds any tokens
+        if (nTokens == 0) {
+            revert NoTokensHeld();
+        }
