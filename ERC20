@@ -152,3 +152,7 @@ contract WeightedVoting is ERC20 {
         } else {
             _issue.votesAbstain += nTokens;
         }
+
+        // Add the caller to the list of voters and update total votes count
+        _issue.voters.add(msg.sender);
+        _issue.totalVotes += nTokens;
