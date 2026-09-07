@@ -48,3 +48,10 @@ contract ArraysExercise {
     function afterY2K() public view returns (uint256[] memory, address[] memory) {
         // Initialize counter for timestamps after Y2K
         uint256 counter = 0;
+
+        // Count the number of timestamps after Y2K
+        for (uint i = 0; i < timestamps.length; i++) {
+            if (timestamps[i] > Y2K) {
+                counter++;
+            }
+        }
