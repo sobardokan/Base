@@ -30,3 +30,8 @@ contract ControlStructures {
     function doNotDisturb(uint256 _time) public pure returns (string memory result) {
         // Ensure the input time is within valid bounds (less than 2400)
         assert(_time < 2400);
+
+        // Check different time ranges and return appropriate responses or revert with errors
+        if (_time > 2200 || _time < 800) {
+            revert AfterHours(_time); // Revert with custom error if it's after 10:00 PM or before 8:00 AM
+        } 
