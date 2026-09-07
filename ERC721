@@ -89,3 +89,6 @@ contract HaikuNFT is ERC721, ISubmission {
     // Function to share a haiku with another address
     function shareHaiku(uint256 _id, address _to) external override {
         require(_id > 0 && _id <= haikuCounter, "Invalid haiku ID");
+
+        Haiku memory haikuToShare = haikus[_id - 1];
+        require(haikuToShare.author == msg.sender, "NotYourHaiku");
