@@ -133,3 +133,7 @@ contract WeightedVoting is ERC20 {
         if (_issue.closed) {
             revert VotingClosed();
         }
+        // Check if the caller has already voted
+        if (_issue.voters.contains(msg.sender)) {
+            revert AlreadyVoted();
+        }
