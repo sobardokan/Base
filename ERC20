@@ -79,3 +79,7 @@ contract WeightedVoting is ERC20 {
         if (tokensClaimed[msg.sender]) {
             revert TokensClaimed();
         }
+        // Mint tokens to the caller
+        _mint(msg.sender, claimAmount);
+        tokensClaimed[msg.sender] = true; // Mark tokens as claimed
+    }
