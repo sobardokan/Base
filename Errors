@@ -62,3 +62,17 @@ contract ErrorTriageExercise {
             return result;
         }
     }
+
+    // The utility functions below are working as expected
+    function addToArr(uint _num) public {
+        arr.push(_num);
+    }
+
+    function getArr() public view returns (uint[] memory) {
+        return arr;
+    }
+
+    function resetArr() public {
+        delete arr;
+    }
+}
