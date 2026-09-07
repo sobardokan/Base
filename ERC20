@@ -128,3 +128,8 @@ contract WeightedVoting is ERC20 {
     // Function to cast a vote on a voting issue
     function vote(uint256 _issueId, Vote _vote) public {
         Issue storage _issue = issues[_issueId];
+
+        // Check if the issue is closed
+        if (_issue.closed) {
+            revert VotingClosed();
+        }
