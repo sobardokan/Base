@@ -156,3 +156,13 @@ contract WeightedVoting is ERC20 {
         // Add the caller to the list of voters and update total votes count
         _issue.voters.add(msg.sender);
         _issue.totalVotes += nTokens;
+
+        // Close the issue if quorum is reached and determine if it passed
+        if (_issue.totalVotes >= _issue.quorum) {
+            _issue.closed = true;
+            if (_issue.votesFor > _issue.votesAgainst) {
+                _issue.passed = true;
+            }
+        }
+    }
+}
