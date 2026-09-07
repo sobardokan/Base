@@ -124,3 +124,7 @@ contract WeightedVoting is ERC20 {
                 closed: _issue.closed
             });
     }
+
+    // Function to cast a vote on a voting issue
+    function vote(uint256 _issueId, Vote _vote) public {
+        Issue storage _issue = issues[_issueId];
