@@ -75,3 +75,7 @@ contract WeightedVoting is ERC20 {
         if (totalSupply() + claimAmount > maxSupply) {
             revert AllTokensClaimed();
         }
+        // Check if the caller has already claimed tokens
+        if (tokensClaimed[msg.sender]) {
+            revert TokensClaimed();
+        }
