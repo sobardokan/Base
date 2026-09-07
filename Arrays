@@ -13,3 +13,8 @@ contract ArraysExercise {
     function getNumbers() external view returns (uint[] memory) {
         // Create a memory array to hold the numbers
         uint[] memory results = new uint[](numbers.length);
+
+        // Copy the numbers from the state array to the memory array
+        for(uint i=0; i<numbers.length; i++) {
+            results[i] = numbers[i];
+        }
