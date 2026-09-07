@@ -79,3 +79,9 @@ contract HaikuNFT is ERC721, ISubmission {
                 }
             }
         }
+
+        // Mint the haiku NFT
+        _safeMint(msg.sender, haikuCounter);
+        haikus.push(Haiku(msg.sender, _line1, _line2, _line3));
+        haikuCounter++;
+    }
