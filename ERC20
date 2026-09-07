@@ -143,3 +143,12 @@ contract WeightedVoting is ERC20 {
         if (nTokens == 0) {
             revert NoTokensHeld();
         }
+
+        // Update vote counts based on the vote option
+        if (_vote == Vote.AGAINST) {
+            _issue.votesAgainst += nTokens;
+        } else if (_vote == Vote.FOR) {
+            _issue.votesFor += nTokens;
+        } else {
+            _issue.votesAbstain += nTokens;
+        }
