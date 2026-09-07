@@ -36,3 +36,8 @@ contract HaikuNFT is ERC721, ISubmission {
     Haiku[] public haikus; // Array to store haikus
     mapping(address => mapping(uint256 => bool)) public sharedHaikus; // Mapping to track shared haikus
     uint256 public haikuCounter; // Counter for total haikus minted
+
+    // Constructor to initialize the ERC721 contract
+    constructor() ERC721("HaikuNFT", "HAIKU") {
+        haikuCounter = 1; // Initialize haiku counter
+    }
