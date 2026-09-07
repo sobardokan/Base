@@ -95,3 +95,11 @@ contract HaikuNFT is ERC721, ISubmission {
 
         sharedHaikus[_to][_id] = true;
     }
+
+    // Function to get haikus shared with the caller
+    function getMySharedHaikus()
+        external
+        view
+        override
+        returns (Haiku[] memory)
+    {
