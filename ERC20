@@ -103,3 +103,10 @@ contract WeightedVoting is ERC20 {
         _issue.quorum = _quorum;
         return issues.length - 1;
     }
+
+    // Function to get details of a voting issue
+    function getIssue(uint256 _issueId)
+        external
+        view
+        returns (SerializedIssue memory)
+    {
