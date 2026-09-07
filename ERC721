@@ -118,3 +118,10 @@ contract HaikuNFT is ERC721, ISubmission {
                 currentIndex++;
             }
         }
+
+        if (sharedHaikuCount == 0) {
+            revert NoHaikusShared();
+        }
+
+        return result;
+    }
